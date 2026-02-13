@@ -8,6 +8,21 @@ The script asks the user to input the numbers and the operation to be performed,
 and prints the result to the terminal window.
 
 """
+def check():
+    """
+    Ask the user to input two numbers and an operation.
+    
+    Returns:
+        tuple: (num1, num2, operation)
+    """
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+        return num1, num2, operation
+    except ValueError:
+        print("Invalid number entered. Please try again.")
+        return check()
 
 def simple_calculator(operation: str, num1: float, num2: float) -> float:
     """
